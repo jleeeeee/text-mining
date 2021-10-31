@@ -3,6 +3,7 @@ from newspaper import Config
 from newspaper.utils import BeautifulSoup
 from operator import itemgetter
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
+from thefuzz import fuzz
 
 
 ## Article 1
@@ -12,13 +13,13 @@ article.download()
 article.parse()
 article_meta_data = article.meta_data
 article_summary = {value for (key, value) in article_meta_data.items() if key == 'description'}
-
 # General Information
 # print(article.title)
 # print(article.summary)
 news_story = article.text
 # print(news_story)
 # print(article.publish_date)
+print(article.keywords)
 
 
 ## Article 2
@@ -28,7 +29,6 @@ article_2.download()
 article_2.parse()
 article_2_meta_data = article_2.meta_data
 article_2_summary = {value for (key, value) in article_2_meta_data.items() if key == 'description'}
-
 # General Information 
 # print(article_2.title)
 # print(article_2.summary)
@@ -62,8 +62,8 @@ def word_frequency(news_story):
 
 top1 = word_frequency(news_story)
 top2 = word_frequency(news_story_2)
-print(top1)
-print(top2)
+# print(top1)
+# print(top2)
 
 
 
@@ -89,25 +89,22 @@ def commons(top1,top2):
 
 
 
+fuzz.ratio(news_story,news_story_2)
 
 
 
-
-similarities = []
-def percent_similarity(top,sentence):
-    strip_sentence = sentence.strip(",.:;")
-    split_sentence = strip_sentence.split(" ")
-    list_sentence = list(split_sentence)
-    for i in list_sentence:
-        if i in top:
-            similarities.append(i)
-        else:
-            continue
-    return(similarities)
+# similarities = []
+# def percent_similarity(top,sentence):
+#     strip_sentence = sentence.strip(",.:;")
+#     split_sentence = strip_sentence.split(" ")
+#     list_sentence = list(split_sentence)
+#     for i in list_sentence:
+#         if i in top:
+#             similarities.append(i)
+#     return(similarities)
 
 
-
-sentence = "I love playing Nintendo on my Apple product."
+sentence = "I love playing Nintendo on my Apple product and my Nintendo Switch."
 # print(percent_similarity(top1,sentence))
 # print(percent_similarity(top2,sentence))
 
@@ -118,6 +115,9 @@ sentence = "I love playing Nintendo on my Apple product."
 
 # import nltk
 # nltk.download()
-# sentence = 'Software Design is my favorite class because learning Python is so cool!'
-# score = SentimentIntensityAnalyzer().polarity_scores(sentence)
-# print(score)
+
+
+# sentiment_score_1 = SentimentIntensityAnalyzer().polarity_scores(news_story)
+# sentiment_score_2 = SentimentIntensityAnalyzer().polarity_scores(news_story_2)
+# print(sentiment_score_1)
+# print(sentiment_score_2)
