@@ -3,6 +3,9 @@ from newspaper import Config
 from newspaper.utils import BeautifulSoup
 from operator import itemgetter
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
+import numpy as np
+# import matplotlib.pyplot as plt
+
 import matplotlib.pyplot as plt
 
 
@@ -42,6 +45,9 @@ news_story_2 = article_2.text
 
 
 
+
+
+
 mydict = {}
 
 def word_frequency(news_story):
@@ -58,7 +64,7 @@ def word_frequency(news_story):
             mydict[i] = 1
         else:
             mydict[i] += 1
-    freq = dict(sorted(mydict.items(), key = itemgetter(1), reverse = True)[:10]) # Researched from StackedOverflow
+    freq = dict(sorted(mydict.items(), key = itemgetter(1), reverse = True)[:5]) # Researched from StackedOverflow
     #print(mydict)
     return(freq)
 
@@ -67,7 +73,12 @@ top2 = word_frequency(news_story_2)
 # print(top1)
 # print(top2)
 
+data = top1
+names = list(data.keys())
+values = list(data.values())
 
+plt.bar(range(len(data)), values, tick_label=names) 
+plt.show() # Run this to view the top 5 most commonly occuring words from the first news article and their frequency displayed in the form of a bar graph.
 
 
 
@@ -75,17 +86,17 @@ top2 = word_frequency(news_story_2)
 myduplicates=[]
 myuniques=[]
 
-def commons(top1,top2):
-    '''
-    Finds the most common words of each article and unique words not found in the second article but found in the first. 
-    '''
-    for i in top1:
-        if i in top2:
-            myduplicates.append(i)
-        else:
-            myuniques.append(i)
-    print(myduplicates)
-    return(myuniques)
+# def commons(top1,top2):
+#     '''
+#     Finds the most common words of each article and unique words not found in the second article but found in the first. 
+#     '''
+#     for i in top1:
+#         if i in top2:
+#             myduplicates.append(i)
+#         else:
+#             myuniques.append(i)
+#     print(myduplicates)
+#     return(myuniques)
 
 # print(commons(top1,top2))
 
@@ -105,5 +116,5 @@ import nltk
 
 sentiment_score_1 = SentimentIntensityAnalyzer().polarity_scores(news_story)
 sentiment_score_2 = SentimentIntensityAnalyzer().polarity_scores(news_story_2)
-print(sentiment_score_1)
-print(sentiment_score_2)
+# print(sentiment_score_1)
+# print(sentiment_score_2)
