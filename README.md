@@ -14,14 +14,14 @@ One design decision I made was to combine two functions into one when turning th
 
 ## Results 
 Some results that I found interesting was that some words within a text is referred more to than general descriptive words such as "a","the","and","an","it", etc. Here are the results of analyzing two news articles on Nintendo:
-![text analysis results](C:\Users\Student\Pictures\textanalysis.PNG)
 
-<img src="C:\Users\Student\Pictures\textanalysis.PNG" alt="textanalysis results">
+<img src="textanalysis.PNG" alt="textanalysis results">
 
 I would have expected news articles to be more wordy and contain more filler words, so this was surprising. 
 
-I also realize that text similarity is not the best text analysis tool for news articles, as the news articles would have to be on the same specific topic or stance. For example, the news articles can't be just two articles on pizza, but two articles on being pro-pineapple-on-pizza. I realize this after my results didn't bare much information, since the way thefuzz determines text similarity is the Levenshtein distance and not word frequency. Therefore, I created a function that tested similarties on word frequency and was able to also compare it to a sentence that has a certain sentiment. This was my result:
+I also realize that text similarity is not the best text analysis tool for news articles, as the news articles would have to be on the same specific topic or stance. For example, the news articles can't be just two articles on pizza, but two articles on being pro-pineapple-on-pizza. I realize this after my results didn't bare much information, since the way thefuzz determines text similarity is the Levenshtein distance and not word frequency. Therefore, I utilized NLTK to test similar sentiments. This was my result:
 
+<img src="sentiment.PNG" alt="textanalysis results">
 
 
 

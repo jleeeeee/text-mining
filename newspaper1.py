@@ -3,7 +3,7 @@ from newspaper import Config
 from newspaper.utils import BeautifulSoup
 from operator import itemgetter
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
-from thefuzz import fuzz
+import matplotlib.pyplot as plt
 
 
 ## Article 1
@@ -19,7 +19,7 @@ article_summary = {value for (key, value) in article_meta_data.items() if key ==
 news_story = article.text
 # print(news_story)
 # print(article.publish_date)
-print(article.keywords)
+# print(article.keywords)
 
 
 ## Article 2
@@ -35,6 +35,8 @@ article_2_summary = {value for (key, value) in article_2_meta_data.items() if ke
 news_story_2 = article_2.text
 # print(news_story_2)
 # print(article_2.publish_date)
+# print(article_2.keywords)
+
 
 
 
@@ -89,35 +91,19 @@ def commons(top1,top2):
 
 
 
-fuzz.ratio(news_story,news_story_2)
 
 
 
-# similarities = []
-# def percent_similarity(top,sentence):
-#     strip_sentence = sentence.strip(",.:;")
-#     split_sentence = strip_sentence.split(" ")
-#     list_sentence = list(split_sentence)
-#     for i in list_sentence:
-#         if i in top:
-#             similarities.append(i)
-#     return(similarities)
-
-
-sentence = "I love playing Nintendo on my Apple product and my Nintendo Switch."
-# print(percent_similarity(top1,sentence))
-# print(percent_similarity(top2,sentence))
 
 
 
-###################################################
+#####################NLTK##############################
 
 
-# import nltk
-# nltk.download()
+import nltk
 
 
-# sentiment_score_1 = SentimentIntensityAnalyzer().polarity_scores(news_story)
-# sentiment_score_2 = SentimentIntensityAnalyzer().polarity_scores(news_story_2)
-# print(sentiment_score_1)
-# print(sentiment_score_2)
+sentiment_score_1 = SentimentIntensityAnalyzer().polarity_scores(news_story)
+sentiment_score_2 = SentimentIntensityAnalyzer().polarity_scores(news_story_2)
+print(sentiment_score_1)
+print(sentiment_score_2)
