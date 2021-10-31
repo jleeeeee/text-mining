@@ -14,10 +14,9 @@ One design decision I made was to combine two functions into one when turning th
 
 ## Results 
 Some results that I found interesting was that some words within a text is referred more to than general descriptive words such as "a","the","and","an","it", etc. Here are the results of analyzing two news articles on Nintendo:
-![text analysis results](C:/Users/Student/Pictures/textanalysis.JPG)
-C:\Users\Student\Pictures\textanalysis.PNG
+![text analysis results](C:\Users\Student\Pictures\textanalysis.PNG)
 
-<img src="textanalysis.JPG" alt="textanalysis results">
+<img src="C:\Users\Student\Pictures\textanalysis.PNG" alt="textanalysis results">
 
 I would have expected news articles to be more wordy and contain more filler words, so this was surprising. 
 
