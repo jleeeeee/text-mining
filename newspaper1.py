@@ -78,7 +78,7 @@ names = list(data.keys())
 values = list(data.values())
 
 plt.bar(range(len(data)), values, tick_label=names) 
-plt.show() # Run this to view the top 5 most commonly occuring words from the first news article and their frequency displayed in the form of a bar graph.
+# plt.show() # Run this to view the top 5 most commonly occuring words from the first news article and their frequency displayed in the form of a bar graph.
 
 
 

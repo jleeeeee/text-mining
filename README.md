@@ -15,21 +15,18 @@ One design decision I made was to combine two functions into one when turning th
 ## Results 
 Some results that I found interesting was that some words within a text is referred more to than general descriptive words such as "a","the","and","an","it", etc. Here are the results of analyzing two news articles on Nintendo:
 
-![screenshot1](textanalysis.PNG)
+{'the': 13, 'in': 11, 'Apple': 7, 'gaming': 6, 'and': 6}
+{'the': 31, 'a': 17, 'in': 16, 'to': 15, 'on': 12} 
 
-<img src="textanalysis.PNG" alt="textanalysis results">
-
-The top 5 most commonly used words are in display of a bargraph using Matplot.lib: 
-
-<img src="textanalysis.PNG" alt="textanalysis results">
+The top 5 most commonly used words are in display of a bargraph using Matplot.lib. This can be found in the sentiment.PNG. 
 
 I would have expected news articles to be more wordy and contain more filler words, so this was surprising. 
 
 I also realize that text similarity is not the best text analysis tool for news articles, as the news articles would have to be on the same specific topic or stance. For example, the news articles can't be just two articles on pizza, but two articles on being pro-pineapple-on-pizza. I realize this after my results didn't bare much information, since the way thefuzz determines text similarity is the Levenshtein distance and not word frequency. Therefore, I utilized NLTK to test similar sentiments. This was my result:
 
-<img src="sentiment.PNG" alt="sentiment results">
 
-
+{'neg': 0.027, 'neu': 0.912, 'pos': 0.061, 'compound': 0.8761}
+{'neg': 0.027, 'neu': 0.821, 'pos': 0.152, 'compound': 0.9931}
 
 
 ## Reflection
