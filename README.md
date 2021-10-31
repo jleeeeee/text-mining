@@ -16,6 +16,7 @@ One design decision I made was to combine two functions into one when turning th
 Some results that I found interesting was that some words within a text is referred more to than general descriptive words such as "a","the","and","an","it", etc. Here are the results of analyzing two news articles on Nintendo:
 
 {'the': 13, 'in': 11, 'Apple': 7, 'gaming': 6, 'and': 6}
+
 {'the': 31, 'a': 17, 'in': 16, 'to': 15, 'on': 12} 
 
 The top 5 most commonly used words are in display of a bargraph using Matplot.lib. This can be found in the sentiment.PNG. 
@@ -26,6 +27,7 @@ I also realize that text similarity is not the best text analysis tool for news 
 
 
 {'neg': 0.027, 'neu': 0.912, 'pos': 0.061, 'compound': 0.8761}
+
 {'neg': 0.027, 'neu': 0.821, 'pos': 0.152, 'compound': 0.9931}
 
 
