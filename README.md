@@ -15,11 +15,13 @@ One design decision I made was to combine two functions into one when turning th
 ## Results 
 Some results that I found interesting was that some words within a text is referred more to than general descriptive words such as "a","the","and","an","it", etc. Here are the results of analyzing two news articles on Nintendo:
 
+![screenshot1](textanalysis.PNG)
+
 <img src="textanalysis.PNG" alt="textanalysis results">
 
 The top 5 most commonly used words are in display of a bargraph using Matplot.lib: 
 
-
+<img src="textanalysis.PNG" alt="textanalysis results">
 
 I would have expected news articles to be more wordy and contain more filler words, so this was surprising. 
 
